@@ -1,6 +1,6 @@
 # OJT
 
-![OJT]
+
 
 ## Introduction
 
