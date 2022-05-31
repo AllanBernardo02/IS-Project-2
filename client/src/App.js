@@ -13,6 +13,8 @@ import Sana from './components/Sana'
 import Student_module from './components/Student_module'
 import Dashboard from './components/Dashboard';
 import Company from './components/Home/Company';
+import PostDetails from './components/PostDetails/PostDetails';
+import CoeModal from './components/Form/CoeModal';
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -20,7 +22,7 @@ const App = () => {
 
   return (
   <BrowserRouter>
-    <Container maxWidth="lg">
+    <div>
    
       <Routes>
         <Route path="/" element={(!user ? <Sana /> : <Navigate to="/cos" />)}/>
@@ -34,10 +36,12 @@ const App = () => {
         <Route path="/student_module" element={<Student_module/>}/>
          <Route path="/dashboard" element={<Dashboard/>}/>
          <Route path="/organisation" element={<Company/>}/>
+         <Route path='/posts/:id' element={<PostDetails/>}/>
+         <Route path='/modal/' element={<CoeModal/>}/>
         </Routes>
         
       
-    </Container>
+    </div>
   </BrowserRouter>
   )
 };

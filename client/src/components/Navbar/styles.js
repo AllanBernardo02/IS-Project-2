@@ -4,13 +4,14 @@ import { deepPurple } from '@material-ui/core/colors';
 export default makeStyles((theme) => ({
   appBar: {
    
-    margin: '0 0 0 -206px',
+    margin: '0 0 30px -206px',
     // display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '10px 50px',
     width: '134.2%',
+    background: '#D3D3D3'
   },
   heading: {
     color: 'black',

@@ -9,8 +9,10 @@ export default makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    margin: '0 0 0 -199px',
-    width: "400px"
+    margin: '0 0 0 -180px',
+    width: "400px",
+    background: '#D3D3D3',
+    color:'black'
   },
   form: {
     display: 'flex',
@@ -22,6 +24,20 @@ export default makeStyles((theme) => ({
     margin: '10px 0',
   },
   buttonSubmit: {
-    marginBottom: 10,
+   color: 'black'
+  },
+  floatinglabelFocusStyle: {
+    color:'white', 
+  },
+  // submit:{
+  //   background:'#59b984'
+  // }
+  paper1: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
   },
 }));

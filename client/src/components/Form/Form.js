@@ -51,16 +51,16 @@ const Form = ({ currentId, setCurrentId }) => {
     <Paper className={classes.paper}>
       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Typography variant="h6">{currentId ? `Editing "${post.name}"` : 'Creating Organisation'}</Typography>
-        <TextField name="organisation name" variant="outlined" label="Organisation Name" fullWidth value={postData.organisationname} onChange={(e) => setPostData({ ...postData, organisationname: e.target.value })} />
+        <TextField InputlabelProps={{className: classes.floatinglabelFocusStyle}} inputProps={{ className: classes.input }} className={classes.input} name="organisation name" variant="outlined" label="Organisation Name" fullWidth value={postData.organisationname} onChange={(e) => setPostData({ ...postData, organisationname: e.target.value })} />
 
-        <TextField name="organisation background" variant="outlined" label="Organisation Background" fullWidth value={postData.organisationbg} onChange={(e) => setPostData({ ...postData, organisationbg: e.target.value })}/>
-        <TextField name="contact person" variant="outlined" label="Contact Person" fullWidth value={postData.contactp} onChange={(e) => setPostData({ ...postData, contactp: e.target.value })}/>
-        <TextField name="contact number" variant="outlined" label="Contact Number" fullWidth value={postData.contactn} onChange={(e) => setPostData({ ...postData, contactn: e.target.value })}/>
-        <TextField name="organisation address" variant="outlined" label="Organisation Address" fullWidth value={postData.organisationadd} onChange={(e) => setPostData({ ...postData, organisationadd: e.target.value })}/>
+        <TextField InputlabelProps={{className: classes.floatinglabelFocusStyle}} inputProps={{ className: classes.input }} className={classes.input} name="organisation background" variant="outlined" label="Organisation Background" fullWidth value={postData.organisationbg} onChange={(e) => setPostData({ ...postData, organisationbg: e.target.value })}/>
+        <TextField InputlabelProps={{className: classes.floatinglabelFocusStyle}} inputProps={{ className: classes.input }} className={classes.input} name="contact person" variant="outlined" label="Contact Person" fullWidth value={postData.contactp} onChange={(e) => setPostData({ ...postData, contactp: e.target.value })}/>
+        <TextField InputlabelProps={{className: classes.floatinglabelFocusStyle}} inputProps={{ className: classes.input }} className={classes.input} name="contact number" variant="outlined" label="Contact Number" fullWidth value={postData.contactn} onChange={(e) => setPostData({ ...postData, contactn: e.target.value })}/>
+        <TextField InputlabelProps={{className: classes.floatinglabelFocusStyle}} inputProps={{ className: classes.input }} className={classes.input} name="organisation address" variant="outlined" label="Organisation Address" fullWidth value={postData.organisationadd} onChange={(e) => setPostData({ ...postData, organisationadd: e.target.value })}/>
         
         
         <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /></div>
-        <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+        <Button className={classes.buttonSubmit} variant="contained"  size="large" color='primary' type="submit" fullWidth>Submit</Button>
         {/*<Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>*/}
       </form>
     </Paper>

@@ -1,49 +1,47 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE, COUNT } from "../constants/actionTypes";
 import * as api from '../api/index.js'
 
-export const getPostsCoe = () => async (dispatch) => {
+export const getPostsCit = () => async (dispatch) => {
     try {
-        const { data } = await api.fetchCoePosts()
+        const { data } = await api.fetchCitPosts()
         dispatch({ type: FETCH_ALL, payload: data})
     } catch (error) {
         console.log(error)
     }
 }
 
-export const createCoePost = (coepost) => async (dispatch) => {
+export const createCitPost = (citpost) => async (dispatch) => {
     try {
-        const { data } = await api.createCoePost(coepost)
-
+        const { data } = await api.createCitPost(citpost)
         dispatch( {type: CREATE, payload: data })
     } catch (error) {
         console.log(error);
     }
 }
 
-export const updateCoePost = (id, coepost) => async (dispatch) => {
+export const updateCitPost = (id, citpost) => async (dispatch) => {
     try {
-        const { data } = await api.updateCoePost(id, coepost)
-
-        dispatch({ type: UPDATE, payload: data })
+        const { data } = await api.updateCitPost(id, citpost)
+        
+        dispatch({ type: UPDATE, payload: data})
     } catch (error) {
         console.log(error);
     }
 }
 
-export const countPost = (id) => async (dispatch) => {
+export const countPostCit = (id) => async (dispatch) => {
 
     try {
-        const { data } = await api.countPost(id)
-
+        const { data } = await api.countPostCit(id)
         dispatch({type: COUNT, payload: data })
     } catch (error) {
         console.log(error);
     }
 }
 
-export const deleteCoePost = (id) => async (dispatch) => {
+export const deleteCitPost = (id) => async (dispatch) => {
     try {
-        await api.deleteCoePost(id)
+        await api. deleteCitPost(id)
 
         dispatch({ type: DELETE, payload: id})
     } catch (error) {

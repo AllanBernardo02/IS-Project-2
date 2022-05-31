@@ -1,6 +1,18 @@
 .item{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* grid-template-columns: 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr; */
     background-color: blanchedalmond;
-    margin: 10px 0 0 0;
+    margin: 10px 10px 0 35px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 95%;
+    
+}
+
+.parent-div{
+    width: 100%;
+    
+}
+
+.im{
+    height: 100%;
 }

@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.headerss{
+    background-color: #59b984;
+    height: 60px;
+    padding: 15px 0 0 30px;
+    margin: 0 0 10px 0;
+}

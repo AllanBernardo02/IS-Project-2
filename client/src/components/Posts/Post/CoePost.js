@@ -8,11 +8,20 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { countPost, deleteCoePost } from '../../../actions/coePosts'
 import { Card, CardActions, CardContent, Button, CardMedia, Typography } from '@material-ui/core'
 import './CoePost.css'
+import useStyles from './styles'
+
+
 
 
 const CoePost = ({ coepost, setCurrentId }) => {
     const dispatch = useDispatch()
     const user = JSON.parse(localStorage.getItem('profile'))
+    const classes = useStyles();
+
+
+
+   
+
     
 
     if(!user?.result?.name) {
@@ -71,9 +80,11 @@ const CoePost = ({ coepost, setCurrentId }) => {
             </div>
 
             </Card>*/}
-
+    <div className='parent-div'>
     <div className='item'>
-    <div><CardMedia image={coepost.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={coepost.title}/></div>
+        <div className='image'>
+            <CardMedia className={classes.media} image={coepost.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={coepost.title}/>
+        </div>
         <div className='haha'>{coepost.schoolyrcoe}</div>
         <div>{coepost.schoolidcoe}</div>
         <div>{coepost.coursecoe}</div>
@@ -82,15 +93,23 @@ const CoePost = ({ coepost, setCurrentId }) => {
         <div>{coepost.emailcoe}</div>
         <div>{coepost.organisationcoe}</div>
         <div>{coepost.addresscoe}</div>
+        
+
+        
+
         <div>
             {(user?.result?.googleId === coepost?.creator || user?.result?._id === coepost?.creator) && (
                 <React.Fragment>
-                <Button size="small" color="primary"  onClick={() => dispatch(countPost(coepost._id))}>
-                Add Time   <h2>{coepost.hours}</h2>
+                <Button variant='contained' size="small" color="primary"  onClick={() => dispatch(countPost(coepost._id))}>
+                Add Time
                 </Button>
             
                 </React.Fragment>
             )}
+            
+        </div>
+        <div>
+            <h1>Total Hrs : {coepost.hours}</h1>
         </div>
         <div>
             {(user?.result?.googleId === coepost?.creator || user?.result?._id === coepost?.creator) && (
@@ -108,6 +127,19 @@ const CoePost = ({ coepost, setCurrentId }) => {
                 </Button>
             )} 
         </div>
+
+   
+
+
+
+
+
+
+
+
+
+        
+    </div>
     </div>
     </React.Fragment>
   )
