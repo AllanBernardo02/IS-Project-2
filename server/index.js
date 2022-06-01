@@ -8,6 +8,7 @@ import postRoutes from './routes/posts.js';
 import userRouter from "./routes/user.js";
 import coeRoutes from "./routes/coePosts.js"
 import citRoutes from './routes/citPosts.js';
+import coorRoutes from './routes/coorPosts.js';
 
 const app = express();
 
@@ -19,10 +20,11 @@ app.use('/posts', postRoutes);
 app.use("/user", userRouter);
 app.use('/coeposts', coeRoutes)
 app.use('/citposts', citRoutes)
+app.use('/coorposts',coorRoutes)
 // original db
 // const CONNECTION_URL = 'mongodb+srv://js_mastery:M6WfDnJEoj9HkV2d@practice.jto9p.mongodb.net/memories_app?retryWrites=true&w=majority';
 
-const CONNECTION_URL = 'mongodb+srv://isproject2:isproject2123@cluster0.ecjb8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECTION_URL = 'mongodb+srv://orms123:orms123@cluster0.wmoaj.mongodb.net/?retryWrites=true&w=majority' ;
 
 const PORT = process.env.PORT|| 5000;
 

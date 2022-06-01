@@ -2,6 +2,7 @@ import { TextField, Paper, Typography, Button } from "@material-ui/core";
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import FileBase from 'react-file-base64'
+import './CitForm.css'
 
 import { createCitPost, updateCitPost } from "../../actions/citPosts";
 
@@ -45,7 +46,7 @@ const CitForm = ({ currentId, setCurrentId}) => {
 
   return (
     <div>
-        <form autoComplete='off' noValidate onSubmit={handleSubmit}>
+        <form className="form" autoComplete='off' noValidate onSubmit={handleSubmit}>
             <Typography variant="h6">{currentId ? `Editing "${citpost.name}"` : 'Creating Student'}</Typography>
             <TextField name="schoolidcit" variant="outlined" label="School ID" fullWidth value={citPostData.schoolidcit} onChange={(e) => setCitPostData({ ...citPostData, schoolidcit: e.target.value})}/>
             <TextField name="coursecit" variant="outlined" label="Course" fullWidth value={citPostData.coursecit} onChange={(e) => setCitPostData({ ...citPostData, coursecit: e.target.value})}/>

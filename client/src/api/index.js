@@ -31,3 +31,8 @@ export const createCitPost = (newPost) => API.post('/citposts', newPost)
 export const countPostCit = (id) => API.patch(`/citposts/${id}/countPost`)
 export const updateCitPost = (id, updateCitPost) => API.patch(`/citposts/${id}`, updateCitPost)
 export const deleteCitPost = (id) => API.delete(`/citposts/${id}`)
+//COORDINATOR CRUD
+export const fetchCoorPosts = () => API.get('/coorposts')
+export const createCoorPost = (newPost) => API.post('/coorposts', newPost)
+export const updateCoorPost = (id, updateCPost) => API.patch(`/coorposts/${id}`, updateCoorPost)
+export const deleteCoorPost = (id) => API.delete(`/coorposts/${id}`)

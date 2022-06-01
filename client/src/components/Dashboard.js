@@ -91,7 +91,7 @@ const Dashboard = () => {
                 </Link>
             </div>
             <div>
-                <Link  component={Link} to=""> 
+                <Link  component={Link} to="/coor"> 
                     <h2>Coordinator Module</h2>
                 </Link>
             </div>

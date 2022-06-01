@@ -15,6 +15,7 @@ import Dashboard from './components/Dashboard';
 import Company from './components/Home/Company';
 import PostDetails from './components/PostDetails/PostDetails';
 import CoeModal from './components/Form/CoeModal';
+import Coor from './components/Home/Coordinator';
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -38,6 +39,7 @@ const App = () => {
          <Route path="/organisation" element={<Company/>}/>
          <Route path='/posts/:id' element={<PostDetails/>}/>
          <Route path='/modal/' element={<CoeModal/>}/>
+         <Route path='/coor'element={<Coor/>}/>
         </Routes>
         
       
