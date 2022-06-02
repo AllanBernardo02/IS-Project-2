@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import FileBase from 'react-file-base64'
 
 import { createCoorPost, updateCoorPost } from '../../actions/coorPosts'
-// import './CoorForm.css'
+ import './CitForm.css'
 import useStyles from './styles'
 import CoeModal from './CoeModal'
 
@@ -12,7 +12,7 @@ import CoeModal from './CoeModal'
 const CoorForm = ({ currentId, setCurrentId}) => {
     const [coorPostData, setCoorPostData] = useState({ fullnamecoor:'', contactcoor:'',emailcoor:'',addresscoor:'',selectedFile:'' })
 
-    const coorpost = useSelector((state) => (currentId ? state.coeposts.find((message) => message._id === currentId) : null))
+    const coorpost = useSelector((state) => (currentId ? state.coorposts.find((message) => message._id === currentId) : null))
     const dispatch = useDispatch()
     const user = JSON.parse(localStorage.getItem('profile'))
     const classes = useStyles()
@@ -51,7 +51,7 @@ const CoorForm = ({ currentId, setCurrentId}) => {
   return (
     <div>
         <form className='form' autoComplete='off' noValidate onSubmit={handleSubmit}>
-            <Typography className='title' variant="h4">{currentId ? `Editing "${coorpost.name}"` : 'Creating Student'}</Typography>
+            <Typography className='title' variant="h4">{currentId ? `Editing "${coorpost.name}"` : 'Creating Coordinator'}</Typography>
             <h4>Full Name</h4>
             <TextField className='textfield' name="fullnamecoor" variant="outlined" label="Full Name"  fullWidth value={coorPostData.fullnamecoor} onChange={(e) => setCoorPostData({ ...coorPostData, fullnamecoor: e.target.value})}/>
             <h4>Contact Number</h4>
@@ -64,7 +64,7 @@ const CoorForm = ({ currentId, setCurrentId}) => {
             <Button className={classes.submit} variant="contained" size="large" type="submit" fullWidth>Submit</Button>
             {/*<Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>*/}
         </form>
-        <CoeModal/>
+        
     </div>
   )
 }

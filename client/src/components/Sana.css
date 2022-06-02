@@ -1,11 +1,12 @@
 .body{
-    background-color: #1a1a1a;
+   
     height: 790px;
 }
 
 .headers{
     display: flex;
-    background-color: #59b984;
+    background-color: #2f4353;
+background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
     margin: 0 0 200px 0;
     padding: 10px;
 }
@@ -34,18 +35,18 @@
 }
 blockquote{
     text-align: justify;
-    color: white;
+    color: black;
     text-indent: 50px;
 }
 
 .information{
-    background-color: #242424;
+    background-color: #D3D3D3;
     width: 550px;
     padding: 10px;
 }
 
 .title{
-    color: white;
+    color: black;
 }
 
 .information {

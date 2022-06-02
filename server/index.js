@@ -24,7 +24,7 @@ app.use('/coorposts',coorRoutes)
 // original db
 // const CONNECTION_URL = 'mongodb+srv://js_mastery:M6WfDnJEoj9HkV2d@practice.jto9p.mongodb.net/memories_app?retryWrites=true&w=majority';
 
-const CONNECTION_URL = 'mongodb+srv://orms123:orms123@cluster0.wmoaj.mongodb.net/?retryWrites=true&w=majority' ;
+const CONNECTION_URL = 'mongodb+srv://codewithallan:toshiro02@cluster0.sov3f.mongodb.net/?retryWrites=true&w=majority' ;
 
 const PORT = process.env.PORT|| 5000;
 

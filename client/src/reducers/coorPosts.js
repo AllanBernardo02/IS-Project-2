@@ -7,9 +7,9 @@ export default (coorposts= [], action ) => {
         case CREATE:
             return [...coorposts, action.payload]
         case UPDATE:
-            return coorposts.map((coorposts)=> (coorposts._id ===action.payload._id ? action.payload : coorposts))
+            return coorposts.map((coorpost)=> (coorpost._id ===action.payload._id ? action.payload : coorpost))
         case DELETE:
-            return coorposts.filter((coorposts) => coorposts._id !==action.payload)
+            return coorposts.filter((coorpost) => coorpost._id !==action.payload)
     
         default:
            return coorposts;

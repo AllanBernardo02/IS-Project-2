@@ -15,13 +15,15 @@ const CoorPosts = ({ setCurrentId }) => {
     }, [coorposts])
     
     return (
-        !coorposts? <CircularProgress/> : (
+        !coorposts.length ? <CircularProgress/> : (
             <Grid container>
                 {coorposts.map((coorpost) => (
                     <Grid key={coorpost._id}>
                         <CoorPost coorpost={coorpost} setCurrentId={setCurrentId}/>
                     </Grid>
+                        
                 ))}
+                {coorposts.length}
             </Grid>
         )
     )

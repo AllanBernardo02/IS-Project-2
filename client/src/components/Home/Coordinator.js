@@ -44,15 +44,19 @@ const Coor = () => {
   return (
     <div>
         <div className='headerss'>
-          <h1>College Of Engineering </h1>
-         
+          <h1>School Coordinator </h1>
+          <h3>Number of Coordinator : {coorposts.length}</h3>
         </div>
         
-        
-        
-        <CoorForm currentId={currentId} setCurrentId={setCurrentId}/>
-        <Table/>
-        <CoorPosts setCurrentId={setCurrentId}/>
+        <div className='main-div'>
+          <div>
+            <CoorForm currentId={currentId} setCurrentId={setCurrentId}/>
+          </div>
+          <div>
+            <CoorPosts setCurrentId={setCurrentId}/>
+          </div>
+          
+        </div>
         <Button onClick={back} variant="contained" color="primary">Back to Student Module</Button>
     </div>
   )
