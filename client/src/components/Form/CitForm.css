@@ -1,4 +1,15 @@
 .form{
+    background-color: #d3d3d3;
     width: 25%;
     height: 25%;
+    padding: 20px;
+    margin: 0 30px 20px 60px;
+}
+
+.title{
+    text-align: center;
+}
+
+.textfield1{
+    background-color: #59b984;
 }

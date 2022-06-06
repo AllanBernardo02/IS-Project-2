@@ -21,44 +21,72 @@ const Student_module = () => {
         );
       }
 
+const back_cos = () => {
+    history('/cos')
+}
 
+const back_coe = () => {
+    history('/coe')
+}
 
+const back_cit = () => {
+    history('/cit')
+}
+
+const back_cie = () => {
+    history('/cie')
+}
+const back_cafa = () =>{
+    history('/cafa')
+}
+
+const back_cla = () =>{
+    history('/cla')
+}
     return (
-        <div>
-            <div>        
-                <Link  component={Link} to="/cos">
-                    <Button>College of Science</Button>
-                </Link>
+        <React.Fragment>
+            <div className='bahay'>
+                <div className='lolo'>
+                    <div className='anak' onClick={back_cos}>        
+                        
+                            <Button >College of Science</Button>
+                        
+                    </div>
+                    <div className='anak' onClick={back_coe}>
+                        
+                            <Button>College of Engineering</Button>
+                      
+                    </div>
+                </div>
+                <div className='lolo'>
+                    <div className='anak' onClick={back_cit}>
+                        
+                            <Button>College of Industrial Technology</Button>
+                        
+                    </div>
+                    <div className='anak' onClick={back_cie}>
+                        
+                            <Button>College of Industrial Education</Button>
+                        
+                    </div>
+                </div>
+                <div className='lolo'>
+                    <div className='anak' onClick={back_cafa}>
+                        
+                            <Button>College of Architecture and Fine Arts</Button>
+                        
+                    </div>
+                    <div className='anak' onClick={back_cla}>
+                        
+                            <Button>College of Liberal Arts</Button>
+                        
+                    </div>
+                </div>
             </div>
-            <div>
-                <Link  component={Link} to="/coe">
-                    <Button>College of Engineering</Button>
-                </Link>
+            <div className='dashboardd'>
+                <Button onClick={back} variant="contained" color="primary">Back to Dashboard</Button> 
             </div>
-            <div>
-                <Link  component={Link} to="/cit">
-                    <Button>College of Industrial Technology</Button>
-                </Link>
-            </div>
-            <div>
-                <Link  component={Link} to="/cie">
-                    <Button>College of Industrial Education</Button>
-                </Link>
-            </div>
-            <div>
-                <Link  component={Link} to="/cos">
-                    <Button>College of Architecture and Fine Arts</Button>
-                </Link>
-            </div>
-            <div>
-                <Link  component={Link} to="/cos">
-                    <Button>College of Liberal Arts</Button>
-                </Link>
-            </div>
-    
-        <Button onClick={back}>Back to Dashboard</Button> 
-      
-        </div>
+        </React.Fragment>
     )
 }
 

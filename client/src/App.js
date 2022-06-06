@@ -7,6 +7,8 @@ import Cos from './components/Home/Cos';
 import Coe from './components/Home/Coe';
 import Cit from './components/Home/Cit';
 import Cie from './components/Home/Cie'
+import Cafa from './components/Home/Cafa';
+import Cla from './components/Home/Cla';
 
 import Auth from './components/Auth/Auth';
 import Sana from './components/Sana'
@@ -40,6 +42,8 @@ const App = () => {
          <Route path='/posts/:id' element={<PostDetails/>}/>
          <Route path='/modal/' element={<CoeModal/>}/>
          <Route path='/coor'element={<Coor/>}/>
+         <Route path='/cafa' element={<Cafa/>}/>
+         <Route path='/cla' element={<Cla/>}/>
         </Routes>
         
       

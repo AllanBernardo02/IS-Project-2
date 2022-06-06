@@ -40,7 +40,7 @@ const CoorPost = ({ coorpost, setCurrentId }) => {
         </div>
         <div>{coorpost.fullnamecoor}</div>
         <div>{coorpost.contactcoor}</div>
-        <div>{coorpost.emailcoor}</div>
+        <div className='email'>{coorpost.emailcoor}</div>
         <div>{coorpost.addresscoor}</div>
         
 

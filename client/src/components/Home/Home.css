@@ -5,5 +5,5 @@
 /* Coordinator */
 .main-div{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .8fr 1.1fr;
 }

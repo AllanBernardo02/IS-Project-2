@@ -14,7 +14,7 @@ export const getCitPosts = async (req, res) =>{
         res.status(404).json({ message: error.message})
     }
 }
-
+         
 export const getCitPost = async (req, res) => {
     const { id } = req.params
     

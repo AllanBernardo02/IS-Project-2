@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Grow, Grid} from '@material-ui/core'
+import { Container, Grow, Grid, Button } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { Button} from 'react-bootstrap'
+
 
 import { getPostsCoe } from '../../actions/coePosts'
 import CoePosts from '../Posts/CoePosts'
@@ -53,7 +53,7 @@ const Coe = () => {
         <CoeForm currentId={currentId} setCurrentId={setCurrentId}/>
         <Table/>
         <CoePosts setCurrentId={setCurrentId}/>
-        <Button onClick={back} variant="contained" color="primary">Back to Student Module</Button>
+        <Button onClick={back} variant="contained" color="primary">Back to Student Modules</Button>
     </div>
   )
 }

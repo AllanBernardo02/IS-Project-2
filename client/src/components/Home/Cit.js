@@ -9,6 +9,7 @@ import CitForm from '../Form/CitForm'
 import './Home.css'
 import Dashboard from '../Dashboard'
 import Sana from '../Sana'
+import './Cit.css'
 
 
 const Cit = () => {
@@ -36,8 +37,12 @@ const Cit = () => {
 
   return (
     <div>
-        <h1>College Of Industrial Technology</h1>
-        <div>{citposts.length}</div>
+        <div className='headerss2'>
+          <h1>College of Industrial Technology</h1>
+          <h3>Number of Student in COE : {citposts.length}</h3>
+          
+        </div>
+        
         <CitForm currentId={currentId} setCurrentId={setCurrentId}/>
         <CitPosts setCurrentId={setCurrentId}/>
         <Button onClick={back} variant="contained" color="primary">Back to Student Module</Button>

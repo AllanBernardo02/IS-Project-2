@@ -47,15 +47,15 @@ const CitForm = ({ currentId, setCurrentId}) => {
   return (
     <div>
         <form className="form" autoComplete='off' noValidate onSubmit={handleSubmit}>
-            <Typography variant="h6">{currentId ? `Editing "${citpost.name}"` : 'Creating Student'}</Typography>
-            <TextField name="schoolidcit" variant="outlined" label="School ID" fullWidth value={citPostData.schoolidcit} onChange={(e) => setCitPostData({ ...citPostData, schoolidcit: e.target.value})}/>
-            <TextField name="coursecit" variant="outlined" label="Course" fullWidth value={citPostData.coursecit} onChange={(e) => setCitPostData({ ...citPostData, coursecit: e.target.value})}/>
-            <TextField name="fullnamecit" variant="outlined" label="Full Name" fullWidth value={citPostData.fullnamecit} onChange={(e) => setCitPostData({ ...citPostData, fullnamecit: e.target.value})}/>
-            <TextField name="contactcit" variant="outlined" label="Contact" fullWidth value={citPostData.contactcit} onChange={(e) => setCitPostData({ ...citPostData, contactcit: e.target.value})}/>
-            <TextField name="emailcit" variant="outlined" label="Email" fullWidth value={citPostData.emailcit} onChange={(e) => setCitPostData({ ...citPostData, emailcit: e.target.value})}/>
-            <TextField name="addresscit" variant="outlined" label="Address" fullWidth value={citPostData.addresscit} onChange={(e) => setCitPostData({ ...citPostData, addresscit: e.target.value})}/>
-            <TextField name="school yearcit" variant="outlined" label="School year" fullWidth value={citPostData.schoolyrcit} onChange={(e) => setCitPostData({ ...citPostData, schoolyrcit: e.target.value})}/>
-            <TextField name="organisationcit" variant="outlined" label="Organisation" fullWidth value={citPostData.organisationcit} onChange={(e) => setCitPostData({ ...citPostData, organisationcit: e.target.value})}/>
+            <Typography className='title' variant="h6">{currentId ? `Editing "${citpost.name}"` : 'Creating Student'}</Typography>
+            <TextField className='textfield' name="schoolidcit" variant="outlined" label="School ID" fullWidth value={citPostData.schoolidcit} onChange={(e) => setCitPostData({ ...citPostData, schoolidcit: e.target.value})}/>
+            <TextField className='textfield' name="coursecit" variant="outlined" label="Course" fullWidth value={citPostData.coursecit} onChange={(e) => setCitPostData({ ...citPostData, coursecit: e.target.value})}/>
+            <TextField className='textfield' name="fullnamecit" variant="outlined" label="Full Name" fullWidth value={citPostData.fullnamecit} onChange={(e) => setCitPostData({ ...citPostData, fullnamecit: e.target.value})}/>
+            <TextField className='textfield' name="contactcit" variant="outlined" label="Contact" fullWidth value={citPostData.contactcit} onChange={(e) => setCitPostData({ ...citPostData, contactcit: e.target.value})}/>
+            <TextField className='textfield' name="emailcit" variant="outlined" label="Email" fullWidth value={citPostData.emailcit} onChange={(e) => setCitPostData({ ...citPostData, emailcit: e.target.value})}/>
+            <TextField className='textfield' name="addresscit" variant="outlined" label="Address" fullWidth value={citPostData.addresscit} onChange={(e) => setCitPostData({ ...citPostData, addresscit: e.target.value})}/>
+            <TextField className='textfield' name="school yearcit" variant="outlined" label="School year" fullWidth value={citPostData.schoolyrcit} onChange={(e) => setCitPostData({ ...citPostData, schoolyrcit: e.target.value})}/>
+            <TextField className='textfield' name="organisationcit" variant="outlined" label="Organisation" fullWidth value={citPostData.organisationcit} onChange={(e) => setCitPostData({ ...citPostData, organisationcit: e.target.value})}/>
 
             <div><FileBase type="file" multiple={false} onDone={({ base64}) => setCitPostData({ ...citPostData, selectedFile: base64})}/></div>
             <Button  variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>

@@ -7,6 +7,7 @@ import { createCoorPost, updateCoorPost } from '../../actions/coorPosts'
  import './CitForm.css'
 import useStyles from './styles'
 import CoeModal from './CoeModal'
+import './CoorForm.css'
 
 
 const CoorForm = ({ currentId, setCurrentId}) => {
@@ -50,7 +51,7 @@ const CoorForm = ({ currentId, setCurrentId}) => {
 
   return (
     <div>
-        <form className='form' autoComplete='off' noValidate onSubmit={handleSubmit}>
+        <form className='form-coor' autoComplete='off' noValidate onSubmit={handleSubmit}>
             <Typography className='title' variant="h4">{currentId ? `Editing "${coorpost.name}"` : 'Creating Coordinator'}</Typography>
             <h4>Full Name</h4>
             <TextField className='textfield' name="fullnamecoor" variant="outlined" label="Full Name"  fullWidth value={coorPostData.fullnamecoor} onChange={(e) => setCoorPostData({ ...coorPostData, fullnamecoor: e.target.value})}/>

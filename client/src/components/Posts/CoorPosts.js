@@ -3,6 +3,7 @@ import { Grid, CircularProgress } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 
 import CoorPost from './Post/CoorPost';
+import './CoorPosts.css'
 
 const CoorPosts = ({ setCurrentId }) => {
     const coorposts = useSelector((state) => state.coorposts)
@@ -18,7 +19,7 @@ const CoorPosts = ({ setCurrentId }) => {
         !coorposts.length ? <CircularProgress/> : (
             <Grid container>
                 {coorposts.map((coorpost) => (
-                    <Grid key={coorpost._id}>
+                    <Grid key={coorpost._id} className='data'>
                         <CoorPost coorpost={coorpost} setCurrentId={setCurrentId}/>
                     </Grid>
                         

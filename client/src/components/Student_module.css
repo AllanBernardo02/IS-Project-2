@@ -1,5 +1,36 @@
 *{
-    margin: 0;
+    margin: 10px, 0, 0, 0;
     padding: 0;
+
 }
 
+.lolo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.bahay{
+    margin: 15% 0 30px 0;
+    align-items: center;
+}
+
+.anak{
+    text-align: center;
+    background-color: #d3d3d3;
+    margin: 10px 45px 10px 45px;
+    height: 100px;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.anak Button{
+    font-size: 32px;
+    
+    
+}
+
+.dashboardd{
+    margin: 0 0 0 45%;
+    align-items: center;
+}
