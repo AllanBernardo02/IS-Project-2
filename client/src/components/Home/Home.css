@@ -7,3 +7,16 @@
     display: grid;
     grid-template-columns: .8fr 1.1fr;
 }
+
+.text{
+    background-color: #d3d3d3;
+    padding: 10px;
+}
+
+.but{
+    background-color: black;
+}
+
+.h2{
+    text-align: center;
+}

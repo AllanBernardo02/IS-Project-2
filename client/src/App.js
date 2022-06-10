@@ -28,18 +28,19 @@ const App = () => {
     <div>
    
       <Routes>
-        <Route path="/" element={(!user ? <Sana /> : <Navigate to="/cos" />)}/>
-        <Route path="/auth"  element={(!user ? <Auth />: <Navigate to="/cos" />)} />
+        <Route path="/" element={(!user ? <Sana /> : <Navigate to="/posts" />)}/>
+        <Route path="/auth"  element={(!user ? <Auth />: <Navigate to="/posts" />)} />
        
         {/*<Route path="/cos" element={() => (user ?<Cos/> : <Sana/>)} />*/}
-        <Route path="/cos" element={<Cos/>} />
+        <Route path="/posts" element={<Cos/>} />
+        <Route path="/posts/search" element={<Cos/>} />
         <Route path="/coe" element={<Coe/>} />
         <Route path="/cit" element={<Cit/>} />
         <Route path="/cie" element={<Cie/>} />
         <Route path="/student_module" element={<Student_module/>}/>
          <Route path="/dashboard" element={<Dashboard/>}/>
          <Route path="/organisation" element={<Company/>}/>
-         <Route path='/posts/:id' element={<PostDetails/>}/>
+         {/*/<Route path='/posts/:id' element={<PostDetails/>}/>*/}
          <Route path='/modal/' element={<CoeModal/>}/>
          <Route path='/coor'element={<Coor/>}/>
          <Route path='/cafa' element={<Cafa/>}/>

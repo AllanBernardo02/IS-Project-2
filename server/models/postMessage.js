@@ -6,7 +6,7 @@ const postSchema = mongoose.Schema({
     contactp: String,
     contactn: String,
     organisationadd: String,
-    name: String,
+    name: String, 
     creator: String,
     selectedFile: String,
     hours: { type: Number, default: 0 },

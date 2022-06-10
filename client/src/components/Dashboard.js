@@ -96,7 +96,7 @@ const Dashboard = () => {
                 </Link>
             </div>
             <div>
-                <Link  component={Link} to="/cos">  
+                <Link  component={Link} to="/posts">  
                     <h2>Organisation Module</h2>
                 </Link>
             </div>

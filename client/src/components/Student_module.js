@@ -22,7 +22,7 @@ const Student_module = () => {
       }
 
 const back_cos = () => {
-    history('/cos')
+    history('/posts')
 }
 
 const back_coe = () => {
