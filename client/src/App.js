@@ -9,6 +9,7 @@ import Cit from './components/Home/Cit';
 import Cie from './components/Home/Cie'
 import Cafa from './components/Home/Cafa';
 import Cla from './components/Home/Cla';
+import CosFinal from './components/Home/CosFinal';
 
 import Auth from './components/Auth/Auth';
 import Sana from './components/Sana'
@@ -34,6 +35,7 @@ const App = () => {
         {/*<Route path="/cos" element={() => (user ?<Cos/> : <Sana/>)} />*/}
         <Route path="/posts" element={<Cos/>} />
         <Route path="/posts/search" element={<Cos/>} />
+        
         <Route path="/coe" element={<Coe/>} />
         <Route path="/cit" element={<Cit/>} />
         <Route path="/cie" element={<Cie/>} />
@@ -43,8 +45,10 @@ const App = () => {
          {/*/<Route path='/posts/:id' element={<PostDetails/>}/>*/}
          <Route path='/modal/' element={<CoeModal/>}/>
          <Route path='/coor'element={<Coor/>}/>
+         <Route path="/coorposts/search" element={<Coor/>} />
          <Route path='/cafa' element={<Cafa/>}/>
          <Route path='/cla' element={<Cla/>}/>
+         <Route path='/cos' element={<CosFinal/>} />
         </Routes>
         
       

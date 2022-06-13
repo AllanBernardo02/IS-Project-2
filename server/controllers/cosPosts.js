@@ -31,7 +31,7 @@ export const getCosPost = async (req, res) => {
 export const createCosPost = async (req, res) => {
     const cospost = req.body
 
-    const newCosDatabase =  new CoeDatabase({ ...cospost, creator: req.userId, createdAt: new Date().toISOString()})
+    const newCosDatabase =  new CosDatabase({ ...cospost, creator: req.userId, createdAt: new Date().toISOString()})
 
     try {
         await newCosDatabase.save()

@@ -16,6 +16,19 @@ export const getCoorPosts = async (req,res) =>{
     }
 }
 
+export const getPostsBySearch =  async  (req, res) => {
+    const { searchCoorQuery } =  req.query
+
+    try {
+        const fullnamecoor = new RegExp(searchCoorQuery, 'i')
+
+        const coorposts = await CoorDatabase.find({$or: [{fullnamecoor}]})
+        res.json({ data: coorposts})
+    } catch (error) {
+        res.status(404).json({ message: error.message })
+    }
+}
+
 export const getCoorPost = async (req,res) =>{
     const { id } = req.params
 
