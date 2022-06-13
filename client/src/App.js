@@ -37,6 +37,7 @@ const App = () => {
         <Route path="/posts/search" element={<Cos/>} />
         
         <Route path="/coe" element={<Coe/>} />
+        <Route path="/coeposts/search" element={<Coe/>} />
         <Route path="/cit" element={<Cit/>} />
         <Route path="/cie" element={<Cie/>} />
         <Route path="/student_module" element={<Student_module/>}/>

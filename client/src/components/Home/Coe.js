@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Grow, Grid, Button } from '@material-ui/core'
+import { Container, Grow, Grid, Button, TextField} from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate , useLocation } from 'react-router-dom'
 
 
-import { getPostsCoe } from '../../actions/coePosts'
+import { getPostsBySearch, getPostsCoe } from '../../actions/coePosts'
 import CoePosts from '../Posts/CoePosts'
 
 import CoeForm from '../Form/CoeForm'
@@ -14,7 +14,9 @@ import Sana from '../Sana'
 import Table from './Table'
 import './Coe.css'
 
-
+function useQuery() {
+  return new URLSearchParams(useLocation().search)
+}
 
 const Coe = () => {
   const [currentId, setCurrentId] = useState(0)
@@ -22,13 +24,30 @@ const Coe = () => {
   const coeposts = useSelector( (state) => state.coeposts)
   const history = useNavigate()
   const user = JSON.parse(localStorage.getItem('profile'));
-
+  const query = useQuery()
+  const page = query.get('page')
+  const searchQuery = query.get('SearchQuery')
+  const [search, setSearch] = useState('')
   
 
   useEffect(() => {
     dispatch(getPostsCoe())
   }, [currentId, dispatch])
 
+  const searchCoePost = () => {
+    if(search.trim()) {
+      dispatch(getPostsBySearch({search}))
+      history(`/coeposts/search?searchCoeQuery=${search || 'none' }`)
+    } else {
+      history('/')
+    }
+  } 
+
+  const handleKeyPress = (e) => {
+    if(e.keyCode === 13) {
+      searchCoePost()
+    }
+  }
 
   const back = () => {
     history("/student_module")
@@ -48,7 +67,12 @@ const Coe = () => {
           <h3>Number of Student in COE : {coeposts.length}</h3>
         </div>
         
-        
+        <form className='text'>
+              <h2 className='h2'>Search Coe</h2>
+              <TextField  label='Search' name='search' variant='outlined' fullWidth onKeyPress={handleKeyPress} value={search} onChange={(e) => setSearch(e.target.value)} />
+            
+              <Button className='but' onClick={searchCoePost} color='primary' variant='contained'>Search</Button>
+        </form>
         
         <CoeForm currentId={currentId} setCurrentId={setCurrentId}/>
         <Table/>

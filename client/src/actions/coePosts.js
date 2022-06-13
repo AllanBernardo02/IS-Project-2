@@ -1,4 +1,4 @@
-import { FETCH_ALL, CREATE, UPDATE, DELETE, COUNT } from "../constants/actionTypes";
+import { FETCH_ALL, CREATE, UPDATE, DELETE, COUNT,FETCH_BY_SEARCH } from "../constants/actionTypes";
 import * as api from '../api/index.js'
 
 export const getPostsCoe = () => async (dispatch) => {
@@ -7,6 +7,16 @@ export const getPostsCoe = () => async (dispatch) => {
         dispatch({ type: FETCH_ALL, payload: data})
     } catch (error) {
         console.log(error)
+    }
+}
+
+export const getPostsBySearch = (searchCoeQuery) => async (dispatch) => {
+    try {
+        const { data:{ data } } = await api.fetchCoePostsBySearch(searchCoeQuery)
+
+        dispatch({ type: FETCH_BY_SEARCH, payload: data})
+    } catch (error) {
+        console.log(error);
     }
 }
 

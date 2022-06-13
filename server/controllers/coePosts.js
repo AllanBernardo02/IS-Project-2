@@ -15,6 +15,21 @@ export const getCoePosts = async (req, res) => {
     }
 }
 
+export const getPostsBySearch = async (req,res)=> {
+    const {searchCoeQuery} = req.query
+
+    try {
+        const fullnamecoe = new RegExp(searchCoeQuery, 'i')
+
+        const coeposts = await CoeDatabase.find({$or: [{fullnamecoe}]})
+        res.json({ data: coeposts})
+    } catch (error) { 
+        res.status(404).json({ message: error.message})
+        
+    }
+
+}
+
 export const getCoePost = async (req, res) => {
     const { id } = req.params
 

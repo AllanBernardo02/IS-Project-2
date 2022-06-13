@@ -1,10 +1,11 @@
 import express from 'express'
 
-import { getCoePosts, createCoePost, updateCoePost, deleteCoePost, countPost } from '../controllers/coePosts.js'
+import { getCoePosts, createCoePost, updateCoePost, deleteCoePost, countPost, getPostsBySearch } from '../controllers/coePosts.js'
 
 const router = express.Router()
 import auth from '../middleware/auth.js'
 
+router.get('/search', getPostsBySearch)
 router.get('/', getCoePosts);
 router.post('/',auth,  createCoePost);
 router.patch('/:id', auth, updateCoePost);

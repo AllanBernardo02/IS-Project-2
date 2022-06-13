@@ -22,6 +22,7 @@ export const signIn = (formData) => API.post('/user/signin', formData);
 export const signUp = (formData) => API.post('/user/signup', formData);
 //COE CRUD
 export const fetchCoePosts = () => API.get('/coeposts')
+export const fetchCoePostsBySearch = (searchCoeQuery) => API.get(`/coeposts/search?searchCoeQuery=${searchCoeQuery.search || 'none'}`)
 export const createCoePost = (newPost) => API.post('/coeposts', newPost)
 export const countPost = (id) => API.patch(`/coeposts/${id}/countPost`)
 export const updateCoePost = (id, updateCoePost) => API.patch(`/coeposts/${id}`, updateCoePost)
