@@ -16,6 +16,19 @@ export const getCosPosts = async (req, res) => {
     }
 }
 
+export const getPostsBySearch = async (req, res) => {
+    const { searchCosQuery } = req.query
+
+    try {
+        const fullnamecos = new RegExp(searchCosQuery, 'i')
+
+        const cosposts = await CosDatabase.find({$or: [{fullnamecos}]})
+        res.json({data:cosposts})
+    } catch (error) {
+        res.status(404).json({ message: error.message})
+    }
+}
+
 export const getCosPost = async (req, res) => {
     const { id } = req.params
 

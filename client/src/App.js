@@ -49,6 +49,7 @@ const App = () => {
          <Route path='/cafa' element={<Cafa/>}/>
          <Route path='/cla' element={<Cla/>}/>
          <Route path='/cos' element={<CosFinal/>} />
+         <Route path='/cosposts/search' element={<CosFinal/>} />
         </Routes>
         
       
