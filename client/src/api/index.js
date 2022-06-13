@@ -29,6 +29,7 @@ export const updateCoePost = (id, updateCoePost) => API.patch(`/coeposts/${id}`,
 export const deleteCoePost = (id) => API.delete(`/coeposts/${id}`)
 //CIT CRUD
 export const fetchCitPosts = () => API.get('/citposts')
+export const fetchCitPostsBySearch = (searchCitQuery) => API.get(`/citposts/search?searchCitQuery=${searchCitQuery.search || 'none'}`)
 export const createCitPost = (newPost) => API.post('/citposts', newPost)
 export const countPostCit = (id) => API.patch(`/citposts/${id}/countPost`)
 export const updateCitPost = (id, updateCitPost) => API.patch(`/citposts/${id}`, updateCitPost)

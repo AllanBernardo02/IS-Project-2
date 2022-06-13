@@ -26,7 +26,7 @@ app.use('/cosposts', cosRoutes)
 // original db
 // const CONNECTION_URL = 'mongodb+srv://js_mastery:M6WfDnJEoj9HkV2d@practice.jto9p.mongodb.net/memories_app?retryWrites=true&w=majority';
 
-const CONNECTION_URL = 'mongodb+srv://orms123:orms123@cluster0.bw8b1.mongodb.net/?retryWrites=true&w=majority' ;
+const CONNECTION_URL = 'mongodb+srv://alfer:alfer@cluster0.nifjr.mongodb.net/?retryWrites=true&w=majority' ;
    
 const PORT = process.env.PORT|| 5000;
 

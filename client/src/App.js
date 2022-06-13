@@ -39,6 +39,7 @@ const App = () => {
         <Route path="/coe" element={<Coe/>} />
         <Route path="/coeposts/search" element={<Coe/>} />
         <Route path="/cit" element={<Cit/>} />
+        <Route path="/citposts/search" element={<Cit/>} />
         <Route path="/cie" element={<Cie/>} />
         <Route path="/student_module" element={<Student_module/>}/>
          <Route path="/dashboard" element={<Dashboard/>}/>

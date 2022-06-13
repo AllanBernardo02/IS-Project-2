@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Grow, Grid, Button } from '@material-ui/core'
+import { Container, Grow, Grid, Button, TextField } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
-import { getPostsCit } from '../../actions/citPosts'
+import { getPostsCit, getPostsBySearch } from '../../actions/citPosts'
 import CitPosts from '../Posts/CitPosts'
 import CitForm from '../Form/CitForm'
 import './Home.css'
 import Dashboard from '../Dashboard'
 import Sana from '../Sana'
 import './Cit.css'
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search)
+}
 
 
 const Cit = () => {
@@ -18,11 +22,30 @@ const Cit = () => {
   const citposts = useSelector( (state) => state.citposts)
   const history = useNavigate()
   const user = JSON.parse(localStorage.getItem('profile'));
+  const query = useQuery()
+  const page = query.get('page')
+  const searchQuery = query.get('SearchQuery')
+  const [search, setSearch] = useState('')
+
 
   useEffect(() => {
     dispatch(getPostsCit())
   }, [currentId, dispatch])
 
+  const searchCitPost = () => {
+    if(search.trim()) {
+      dispatch(getPostsBySearch({search}))
+      history(`/citposts/search?searchCitQuery=${search || 'none' }`)
+    } else {
+      history('/')
+    }
+  } 
+
+  const handleKeyPress = (e) => {
+    if(e.keyCode === 13) {
+      searchCitPost()
+    }
+  }
 
   const back = () => {
     history("/student_module")
@@ -43,6 +66,14 @@ const Cit = () => {
           
         </div>
         
+
+        <form className='text'>
+              <h2 className='h2'>Search Cit</h2>
+              <TextField  label='Search' name='search' variant='outlined' fullWidth onKeyPress={handleKeyPress} value={search} onChange={(e) => setSearch(e.target.value)} />
+            
+              <Button className='but' onClick={searchCitPost} color='primary' variant='contained'>Search</Button>
+        </form>
+
         <CitForm currentId={currentId} setCurrentId={setCurrentId}/>
         <CitPosts setCurrentId={setCurrentId}/>
         <Button onClick={back} variant="contained" color="primary">Back to Student Module</Button>

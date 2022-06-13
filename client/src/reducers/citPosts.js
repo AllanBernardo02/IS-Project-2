@@ -1,9 +1,11 @@
 
-import { FETCH_ALL, CREATE, UPDATE, DELETE, COUNT } from "../constants/actionTypes";
+import { FETCH_ALL, CREATE, UPDATE, DELETE, COUNT, FETCH_BY_SEARCH } from "../constants/actionTypes";
 
 export default (citposts = [], action) => {
     switch (action.type) {
         case FETCH_ALL:
+            return action.payload
+        case FETCH_BY_SEARCH:
             return action.payload
         case COUNT:
             return citposts.map((citpost) => (citpost._id === action.payload._id ? action.payload : citpost))

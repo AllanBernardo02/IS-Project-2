@@ -14,6 +14,19 @@ export const getCitPosts = async (req, res) =>{
         res.status(404).json({ message: error.message})
     }
 }
+
+export const getPostsBySearch = async (req, res) => {
+    const { searchCitQuery} = req.query
+
+    try{
+        const fullnamecit = new RegExp(searchCitQuery, 'i')
+
+        const citposts = await CitDatabase.find({$or: [{fullnamecit}]})
+        res.json({ data: citposts})
+    } catch (error) {
+        res.status(404).json({ message: error.message})
+    }
+}
          
 export const getCitPost = async (req, res) => {
     const { id } = req.params
