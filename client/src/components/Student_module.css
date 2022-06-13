@@ -34,3 +34,28 @@
     margin: 0 0 0 45%;
     align-items: center;
 }
+
+/* for header */
+.navbar{
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    background-color: #d3d3d3;
+    height: 70px;
+    padding: 15px 0 0 10px;
+}
+
+.logo{
+    padding: 0 0 0 75%;
+}
+
+.name{
+    padding: 5px 0 0 0;
+}
+
+.ton{
+    padding: 5px;
+}
+
+.sm{
+    font-size: 40px;
+}

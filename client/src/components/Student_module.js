@@ -1,16 +1,30 @@
-import React from 'react';
-import {Button} from '@material-ui/core';
-import { Link, useNavigate} from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, {useState} from 'react';
+import {Button, Typography, Avatar} from '@material-ui/core';
+import { Link, useNavigate, useLocation} from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import Sana from './Sana';
 import './Student_module.css'
+import './Home/Home.css'
+import * as actionType from '.././constants/actionTypes'
 
 
 const Student_module = () => {
 
-    const history = useNavigate()
-    const user = JSON.parse(localStorage.getItem('profile'));
+    // const history = useNavigate()
+    // const user = JSON.parse(localStorage.getItem('profile'));
 
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    const dispatch = useDispatch();
+    const location = useLocation();
+    const history = useNavigate();
+
+    const logout = () => {
+        dispatch({ type: actionType.LOGOUT });
+    
+        history('/auth');
+        setUser(null);
+      };
+    
     const back = () => {
         history('/dashboard')
     }
@@ -45,6 +59,20 @@ const back_cla = () =>{
 }
     return (
         <React.Fragment>
+      
+        <div className="navbar">
+            <div className='sm'>Student Module</div>
+            <div className='logo'>
+                <Avatar  alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
+            </div>
+            <div className='name'>
+                <Typography  variant="h6">{user?.result.name}</Typography>
+            </div>
+            <div className='ton'>
+                <Button variant="contained"  color="secondary" onClick={logout}>Logout</Button>
+            </div>
+         
+        </div>
             <div className='bahay'>
                 <div className='lolo'>
                     <div className='anak' onClick={back_cos}>        
@@ -86,6 +114,7 @@ const back_cla = () =>{
             <div className='dashboardd'>
                 <Button onClick={back} variant="contained" color="primary">Back to Dashboard</Button> 
             </div>
+           
         </React.Fragment>
     )
 }

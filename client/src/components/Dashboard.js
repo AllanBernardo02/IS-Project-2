@@ -104,8 +104,7 @@ const Dashboard = () => {
            
                             
         </div>
-        <Coechart/>
-        <Orgchart/>
+       
         <PieChart data={[["Number of Students in COS", posts.length], ["Number of Students in COE", coeposts.length], 
         ["Number of Students in CIT", 13], ["Number of Students in CIE", 8],
         ["Number of Students in CLA", 23], ["Number of Students in CAFA", 18]]} />

@@ -44,7 +44,7 @@ const Coor = () => {
     } else {
       history('/')
     }
-  }
+  } 
 
   const handleKeyPress = (e) => {
     if(e.keyCode === 13) {
