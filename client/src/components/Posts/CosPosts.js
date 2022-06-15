@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import CosPost from './Post/CosPost';
 
 const CosPosts = ({ setCurrentId }) => {
-    const cosposts = useSelector((state) => state.cosposts)
+    const cosposts  = useSelector((state) => state.cosposts)
 
     // ok check ntn kng ilan to
     useEffect(() => {
@@ -13,6 +13,8 @@ const CosPosts = ({ setCurrentId }) => {
             cosposts
         })
     }, [cosposts])
+
+    
     
     return (
         !cosposts.length ? <CircularProgress/> : (

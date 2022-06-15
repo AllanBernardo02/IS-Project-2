@@ -3,6 +3,7 @@ import { Container } from '@material-ui/core';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+
 import Cos from './components/Home/Cos';
 import Coe from './components/Home/Coe';
 import Cit from './components/Home/Cit';
@@ -12,6 +13,7 @@ import Cla from './components/Home/Cla';
 import CosFinal from './components/Home/CosFinal';
 
 import Auth from './components/Auth/Auth';
+import AuthStudent from './components/Auth/AuthStudent';
 import Sana from './components/Sana'
 import Student_module from './components/Student_module'
 import Dashboard from './components/Dashboard';
@@ -22,16 +24,19 @@ import Coor from './components/Home/Coordinator';
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
+  const user1 = JSON.parse(localStorage.getItem('profileStudent'));
 
+  
 
   return (
   <BrowserRouter>
     <div>
    
       <Routes>
-        <Route path="/" element={(!user ? <Sana /> : <Navigate to="/posts" />)}/>
+        {/*<Route path="/" element={(!user ? <Sana /> : <Navigate to="/posts" />)}/>*/}
+        <Route path="/" element={<Sana/>}/>
         <Route path="/auth"  element={(!user ? <Auth />: <Navigate to="/posts" />)} />
-       
+        <Route path="/auth_student" element={<AuthStudent/>}/>  
         {/*<Route path="/cos" element={() => (user ?<Cos/> : <Sana/>)} />*/}
         <Route path="/posts" element={<Cos/>} />
         <Route path="/posts/search" element={<Cos/>} />
@@ -42,9 +47,11 @@ const App = () => {
         <Route path="/citposts/search" element={<Cit/>} />
         <Route path="/cie" element={<Cie/>} />
         <Route path="/student_module" element={<Student_module/>}/>
-         <Route path="/dashboard" element={<Dashboard/>}/>
+        
+         <Route path="/dashboard" allowedRoles={user} element={<Dashboard/>}/>
+        
          <Route path="/organisation" element={<Company/>}/>
-         {/*/<Route path='/posts/:id' element={<PostDetails/>}/>*/}
+         <Route path='/posts/:id' element={<PostDetails/>}/>
          <Route path='/modal/' element={<CoeModal/>}/>
          <Route path='/coor'element={<Coor/>}/>
          <Route path="/coorposts/search" element={<Coor/>} />

@@ -8,9 +8,10 @@ const router = express.Router()
 
 export const getCosPosts = async (req, res) => {
     try {
-        const cosDatabases = await CosDatabase.find()
+    
+        const cosdatabases = await CosDatabase.find()
 
-        res.status(200).json(cosDatabases)
+        res.status(200).json(cosdatabases)
     } catch (error) {
         res.status(404).json({ message: error.message})
     }

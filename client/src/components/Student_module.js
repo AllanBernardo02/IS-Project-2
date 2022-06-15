@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, Typography, Avatar} from '@material-ui/core';
 import { Link, useNavigate, useLocation} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,11 +17,13 @@ const Student_module = () => {
     const dispatch = useDispatch();
     const location = useLocation();
     const history = useNavigate();
+    const user1 = JSON.parse(localStorage.getItem('profileStudent'));
+
 
     const logout = () => {
         dispatch({ type: actionType.LOGOUT });
     
-        history('/auth');
+        history('/');
         setUser(null);
       };
     
@@ -57,6 +59,23 @@ const back_cafa = () =>{
 const back_cla = () =>{
     history('/cla')
 }
+
+const subok = () => {
+  if(!user?.result?.name){
+      return(
+          <h1>hahaha</h1>
+      )
+  } else {
+      return(
+      <h1>heheeh</h1>
+      )
+  }
+    
+    
+
+}
+
+
     return (
         <React.Fragment>
       
@@ -112,8 +131,11 @@ const back_cla = () =>{
                 </div>
             </div>
             <div className='dashboardd'>
-                <Button onClick={back} variant="contained" color="primary">Back to Dashboard</Button> 
+            {(user1) ?
+                <h1>hahaha</h1> : <Button onClick={back} variant="contained" color="primary">Back to Dashboard</Button> 
+                }
             </div>
+            <h1>{subok()}</h1>
            
         </React.Fragment>
     )

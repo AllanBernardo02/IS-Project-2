@@ -9,6 +9,14 @@ API.interceptors.request.use((req) => {
 
   return req;
 });
+
+API.interceptors.request.use((req) => {
+  if (localStorage.getItem('profileStudent')) {
+    req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profileStudent')).token}`;
+  }
+
+  return req;
+});
 //organization
 export const fetchPost = (id) => API.get(`/posts/${id}`)
 export const fetchPostsBySearch = (searchQuery) => API.get(`/posts/search?searchQuery=${searchQuery.search || 'none'}`)
@@ -20,6 +28,9 @@ export const deletePost = (id) => API.delete(`/posts/${id}`);
 //admin authentication
 export const signIn = (formData) => API.post('/user/signin', formData);
 export const signUp = (formData) => API.post('/user/signup', formData);
+//student authentication
+export const signInStudent = (formDataStudent) => API.post('/student/signinStudent', formDataStudent);
+export const signUpStudent = (formDataStudent) => API.post('/student/signupStudent', formDataStudent);
 //COE CRUD
 export const fetchCoePosts = () => API.get('/coeposts')
 export const fetchCoePostsBySearch = (searchCoeQuery) => API.get(`/coeposts/search?searchCoeQuery=${searchCoeQuery.search || 'none'}`)

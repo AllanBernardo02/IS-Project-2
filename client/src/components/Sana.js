@@ -17,7 +17,7 @@ const Sana = () => {
                         <Button className='button1' component={Link} to="/auth" variant="contained" style={{backgroundColor: '#D3D3D3'}}><h3>Log In as Coordinator</h3></Button>
                     </div>
                     <div className='stu-butt'>
-                        <Button className='button2' component={Link} to="/" variant="contained" style={{backgroundColor: '#D3D3D3'}}><h3>Log In as Student</h3></Button>
+                        <Button className='button2' component={Link} to="/auth_student" variant="contained" style={{backgroundColor: '#D3D3D3'}}><h3>Log In as Student</h3></Button>
                     </div>
                 </div>
                 <div>

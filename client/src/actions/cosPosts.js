@@ -1,10 +1,14 @@
-import { FETCH_ALL, CREATE, UPDATE, DELETE, COUNT, FETCH_BY_SEARCH } from "../constants/actionTypes";
+import { FETCH_ALL, CREATE, UPDATE, DELETE, COUNT, FETCH_BY_SEARCH, START_LOADING, END_LOADING } from "../constants/actionTypes";
 import * as api from '../api/index.js'
 
 export const getPostsCos = () => async (dispatch) => {
     try {
+        
         const { data } = await api.fetchCosPosts()
+        console.log(data);
         dispatch({ type: FETCH_ALL, payload: data})
+        
+     
     } catch (error) {
         console.log(error)
     }
@@ -12,8 +16,11 @@ export const getPostsCos = () => async (dispatch) => {
 
 export const getPostsBySearch = (searchCosQuery) => async (dispatch) => {
     try {
+       
         const { data: {data} } = await api.fetchCosPostsBySearch(searchCosQuery)
         dispatch({type: FETCH_BY_SEARCH, payload: data})
+
+        
     } catch (error) {
         console.log(error);
     }
@@ -21,6 +28,8 @@ export const getPostsBySearch = (searchCosQuery) => async (dispatch) => {
 
 export const createCosPost = (cospost) => async (dispatch) => {
     try {
+        
+
         const { data } = await api.createCosPost(cospost)
         dispatch({type: CREATE, payload: data})
     } catch (error) {

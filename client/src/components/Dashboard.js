@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 import { PieChart, BarChart } from 'react-chartkick'
 import 'chartkick/chart.js'
 import { useSelector, useDispatch } from 'react-redux';
@@ -19,6 +19,13 @@ const Dashboard = () => {
     const [overallPosts, setOverallPosts] = useState([])
     const dispatch = useDispatch()
     const [currentId, setCurrentId] = useState(0)
+    const history = useNavigate()
+
+    useEffect(() => {
+        if(!user) {
+        history('/dashboard')
+        }
+    }, [user])
 
     useEffect(() => {
         dispatch(getPosts());

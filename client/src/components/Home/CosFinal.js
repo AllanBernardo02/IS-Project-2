@@ -13,6 +13,7 @@ import Dashboard from '../Dashboard'
 import Sana from '../Sana'
 import Table from './Table'
 import './Coe.css'
+import Paginate from '../Pagination'
 
 
 function useQuery(){
@@ -25,11 +26,13 @@ const CosFinal = () => {
   const cosposts = useSelector( (state) => state.cosposts)
   const history = useNavigate()
   const user = JSON.parse(localStorage.getItem('profile'));
+  const query = useQuery()
+  
   const [search, setSearch] = useState('')
   
 
   useEffect(() => {
-    dispatch(getPostsCos())
+    dispatch(getPostsCos()) //cosposts -> 
   }, [currentId, dispatch])
 
   const searchCosPosts= () => {

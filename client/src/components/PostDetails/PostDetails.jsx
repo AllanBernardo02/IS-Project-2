@@ -20,7 +20,7 @@ const PostDetails = () => {
 
     if(!post) {
       return (
-        <h1>wala</h1>
+        <h1>wala ng data</h1>
       )
     }
 
