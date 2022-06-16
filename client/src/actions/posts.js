@@ -26,6 +26,10 @@ export const getPostsBySearch = (searchQuery) => async (dispatch) => {
 export const getPosts = () => async (dispatch) => {
   try {
     const { data } = await api.fetchPosts();
+    
+    console.log('server data in organization', {
+      data
+    })
 
     dispatch({ type: FETCH_ALL, payload: data });
   } catch (error) {

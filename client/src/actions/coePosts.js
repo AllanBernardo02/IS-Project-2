@@ -4,6 +4,11 @@ import * as api from '../api/index.js'
 export const getPostsCoe = () => async (dispatch) => {
     try {
         const { data } = await api.fetchCoePosts()
+
+        console.log('server data in coe', {
+            data
+          })
+      
         dispatch({ type: FETCH_ALL, payload: data})
     } catch (error) {
         console.log(error)
