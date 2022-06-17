@@ -7,5 +7,6 @@ import citposts from './citPosts';
 import coorposts from './coorPosts';
 import cosposts from './cosPosts'
 import authStudent from './authStudent'
+import cieposts from './ciePosts'
 
-export const reducers = combineReducers({ posts, auth, authStudent, coeposts, citposts, coorposts, cosposts });
+export const reducers = combineReducers({ posts, auth, authStudent, coeposts, citposts, coorposts, cosposts, cieposts });

@@ -11,6 +11,7 @@ import citRoutes from './routes/citPosts.js';
 import coorRoutes from './routes/coorPosts.js';
 import cosRoutes from './routes/cosPosts.js'
 import studentRouter from './routes/student.js'
+import cieRoutes from './routes/ciePosts.js'
 
 const app = express();
 
@@ -25,10 +26,11 @@ app.use('/coeposts', coeRoutes)
 app.use('/citposts', citRoutes)
 app.use('/coorposts',coorRoutes)
 app.use('/cosposts', cosRoutes)
+app.use('/cieposts', cieRoutes)
 // original db
 // const CONNECTION_URL = 'mongodb+srv://js_mastery:M6WfDnJEoj9HkV2d@practice.jto9p.mongodb.net/memories_app?retryWrites=true&w=majority';
 
-const CONNECTION_URL = 'mongodb+srv://resty_08:abonmalakas@cluster0.aomq37v.mongodb.net/?retryWrites=true&w=majority' ; 
+const CONNECTION_URL = 'mongodb+srv://codewithallan:toshiro02@cluster0.b5v4tzx.mongodb.net/?retryWrites=true&w=majority' ; 
    
 const PORT = process.env.PORT|| 5000;
 

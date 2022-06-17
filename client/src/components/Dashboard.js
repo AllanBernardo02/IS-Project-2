@@ -44,16 +44,18 @@ const Dashboard = () => {
             api.fetchCoePosts(),
             api.fetchCoorPosts(),
             api.fetchCosPosts(),
-            api.fetchPosts()
+            api.fetchPosts(),
+            api.fetchCiePosts()
         ]).then(data => {
 
-            const [cit, coe, coor, cos, posts] = data || {}
+            const [cit, coe, coor, cos, cie, posts] = data || {}
 
             const citCount = cit?.data?.length ?? 0
             const coeCount = coe?.data?.length ?? 0
             const coorCount = coor?.data?.length ?? 0
             const postsCount = posts?.data?.length ?? 0
             const cosCount = cos?.data?.length ?? 0
+            const cieCount= cie?.data?.length ?? 0
 
             const localState = {
                 coe: coe?.data,
@@ -61,11 +63,13 @@ const Dashboard = () => {
                cit: cit?.data,
                coor: coor?.data, 
               cos: cos?.data,
+              cie: cie?.data,
                citCount,
                coeCount,
                coorCount,
                postsCount,
-               cosCount
+               cosCount,
+               cieCount
             }
     
             setLocalState(localState)
@@ -180,14 +184,14 @@ const Dashboard = () => {
             <h1 className='bg'>COS: {localState.cosCount}</h1>
         </div>
         <div className='div3'>
-            <h1 className='bg'>CIE: {10}</h1>            
+            <h1 className='bg'>CIE: {localState.cieCount}</h1>            
             <h1 className='bg'>CAFA: {10}</h1>
             <h1 className='bg'>CLA: {10}</h1>
         </div>
         <div className='lupet'>
         <div className='chart'>
             <PieChart data={[["Number of Organization", localState.postsCount],["Number of Coordinator", localState.coorCount],["Number of Students in COS", localState.cosCount], ["Number of Students in COE", localState.coeCount], 
-            ["Number of Students in CIT", localState.citCount], ["Number of Students in CIE", 8],
+            ["Number of Students in CIT", localState.citCount], ["Number of Students in CIE", localState.cieCount],
             ["Number of Students in CLA", 23], ["Number of Students in CAFA", 18]]} />
         </div>
         <div className='chart'>
