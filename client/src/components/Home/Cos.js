@@ -11,6 +11,7 @@ import Form from '../Form/Form';
 import Navbar from '../Navbar/Navbar';
 import './Home.css'
 import Sana from '../Sana';
+//import './CosFinal.css'
 
 function useQuery() {
   return new URLSearchParams(useLocation().search) // SEARCH

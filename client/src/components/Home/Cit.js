@@ -10,6 +10,7 @@ import './Home.css'
 import Dashboard from '../Dashboard'
 import Sana from '../Sana'
 import './Cit.css'
+import './CosFinal.css'
 
 function useQuery() {
   return new URLSearchParams(useLocation().search)
@@ -67,7 +68,7 @@ const Cit = () => {
         </div>
         
 
-        <form className='text'>
+        <form className='search'>
               <h2 className='h2'>Search Cit</h2>
               <TextField  label='Search' name='search' variant='outlined' fullWidth onKeyPress={handleKeyPress} value={search} onChange={(e) => setSearch(e.target.value)} />
             

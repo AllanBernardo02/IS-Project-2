@@ -14,7 +14,7 @@ import Sana from '../Sana'
 import Table from './Table'
 import './Coe.css'
 import Paginate from '../Pagination'
-
+import './CosFinal.css'
 
 function useQuery(){
   return new URLSearchParams(useLocation()).search
@@ -70,7 +70,7 @@ const CosFinal = () => {
         </div>
         
         
-        <form>
+        <form className='search'>
           <h2>Search COS</h2>
           <TextField label='Search' name='search' variant='outlined' fullWidth onKeyPress={handleKey} value={search} onChange={(e) => setSearch(e.target.value)}/> 
           <Button className='but' onClick={searchCosPosts} color='primary' variant='contained'> Search </Button>

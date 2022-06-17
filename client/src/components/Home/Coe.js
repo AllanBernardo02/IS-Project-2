@@ -13,6 +13,7 @@ import Dashboard from '../Dashboard'
 import Sana from '../Sana'
 import Table from './Table'
 import './Coe.css'
+import './CosFinal.css'
 
 function useQuery() {
   return new URLSearchParams(useLocation().search)
@@ -67,7 +68,7 @@ const Coe = () => {
           <h3>Number of Student in COE : {coeposts.length}</h3>
         </div>
         
-        <form className='text'>
+        <form className='search'>
               <h2 className='h2'>Search Coe</h2>
               <TextField  label='Search' name='search' variant='outlined' fullWidth onKeyPress={handleKeyPress} value={search} onChange={(e) => setSearch(e.target.value)} />
             
