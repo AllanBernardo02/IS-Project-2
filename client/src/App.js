@@ -21,6 +21,7 @@ import Company from './components/Home/Company';
 import PostDetails from './components/PostDetails/PostDetails';
 import CoeModal from './components/Form/CoeModal';
 import Coor from './components/Home/Coordinator';
+import Student_module2 from './components/Student_module2';
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/cie" element={<Cie/>} />
         <Route path="/cieposts/search" element={<Cie/>} />
         <Route path="/student_module" element={<Student_module/>}/>
+        <Route path="/student_module2" element={<Student_module2/>}/>
         
          <Route path="/dashboard" allowedRoles={user} element={<Dashboard/>}/>
         

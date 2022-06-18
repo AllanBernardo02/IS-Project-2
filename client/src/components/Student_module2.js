@@ -8,7 +8,7 @@ import './Home/Home.css'
 import * as actionType from '.././constants/actionTypes'
 
 
-const Student_module = () => {
+const Student_module2 = () => {
 
     // const history = useNavigate()
     // const user = JSON.parse(localStorage.getItem('profile'));
@@ -117,10 +117,16 @@ const back_cla = () =>{
                     </div>
                 </div>
             </div>
-            
+            <div className='dashboardd'>
+            {(!user1) ?
+                <h1>hahaha</h1> : <Button onClick={back} variant="contained" color="primary">Back to Dashboard</Button> 
+                }
+            </div>
+        
+           
         </React.Fragment>
     )
 }
 
 
-export default Student_module;
+export default Student_module2;

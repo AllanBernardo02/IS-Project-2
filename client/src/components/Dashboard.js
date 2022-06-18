@@ -44,8 +44,8 @@ const Dashboard = () => {
             api.fetchCoePosts(),
             api.fetchCoorPosts(),
             api.fetchCosPosts(),
-            api.fetchPosts(),
-            api.fetchCiePosts()
+            api.fetchCiePosts(),
+            api.fetchPosts()
         ]).then(data => {
 
             const [cit, coe, coor, cos, cie, posts] = data || {}
@@ -53,9 +53,9 @@ const Dashboard = () => {
             const citCount = cit?.data?.length ?? 0
             const coeCount = coe?.data?.length ?? 0
             const coorCount = coor?.data?.length ?? 0
-            const postsCount = posts?.data?.length ?? 0
             const cosCount = cos?.data?.length ?? 0
             const cieCount= cie?.data?.length ?? 0
+            const postsCount = posts?.data?.length ?? 0
 
             const localState = {
                 coe: coe?.data,
@@ -67,9 +67,9 @@ const Dashboard = () => {
                citCount,
                coeCount,
                coorCount,
-               postsCount,
                cosCount,
-               cieCount
+               cieCount,
+               postsCount
             }
     
             setLocalState(localState)
@@ -151,7 +151,7 @@ const Dashboard = () => {
                     </div>*/}
         
             <div className='module'>
-                <Link  component={Link} to="/student_module">  
+                <Link  component={Link} to="/student_module2">  
                     <h2>Student Module</h2>
                 </Link>
             </div>
