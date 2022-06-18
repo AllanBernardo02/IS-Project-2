@@ -45,10 +45,12 @@ const Dashboard = () => {
             api.fetchCoorPosts(),
             api.fetchCosPosts(),
             api.fetchCiePosts(),
-            api.fetchPosts()
+            api.fetchPosts(),
+            api.fetchCafaPosts(),
+            api.fetchClaPosts()
         ]).then(data => {
 
-            const [cit, coe, coor, cos, cie, posts] = data || {}
+            const [cit, coe, coor, cos, cie, posts, cafa, cla] = data || {}
 
             const citCount = cit?.data?.length ?? 0
             const coeCount = coe?.data?.length ?? 0
@@ -56,6 +58,8 @@ const Dashboard = () => {
             const cosCount = cos?.data?.length ?? 0
             const cieCount= cie?.data?.length ?? 0
             const postsCount = posts?.data?.length ?? 0
+            const cafaCount = cafa?.data?.length ?? 0
+            const claCount = cla?.data?.length ?? 0
 
             const localState = {
                 coe: coe?.data,
@@ -64,12 +68,17 @@ const Dashboard = () => {
                coor: coor?.data, 
               cos: cos?.data,
               cie: cie?.data,
+              cafa: cafa?.data,
+              cla: cla?.data,
                citCount,
                coeCount,
                coorCount,
                cosCount,
                cieCount,
-               postsCount
+               postsCount,
+               cafaCount,
+               claCount
+
             }
     
             setLocalState(localState)
@@ -185,8 +194,8 @@ const Dashboard = () => {
         </div>
         <div className='div3'>
             <h1 className='bg'>CIE: {localState.cieCount}</h1>            
-            <h1 className='bg'>CAFA: {10}</h1>
-            <h1 className='bg'>CLA: {10}</h1>
+            <h1 className='bg'>CAFA: {localState.cafaCount}</h1>
+            <h1 className='bg'>CLA: {localState.claCount}</h1>
         </div>
         <div className='lupet'>
         <div className='chart'>

@@ -13,6 +13,7 @@ import cosRoutes from './routes/cosPosts.js'
 import studentRouter from './routes/student.js'
 import cieRoutes from './routes/ciePosts.js'
 import cafaRoutes from './routes/cafaPosts.js'
+import claRoutes from './routes/claPosts.js'
 
 const app = express();
 
@@ -29,10 +30,11 @@ app.use('/coorposts',coorRoutes)
 app.use('/cosposts', cosRoutes) 
 app.use('/cieposts', cieRoutes)
 app.use('/cafaposts', cafaRoutes)
+app.use('/claposts', claRoutes)
 // original db
 // const CONNECTION_URL = 'mongodb+srv://js_mastery:M6WfDnJEoj9HkV2d@practice.jto9p.mongodb.net/memories_app?retryWrites=true&w=majority';
 
-const CONNECTION_URL = 'mongodb+srv://codewithallan:toshiro02@cluster0.sov3f.mongodb.net/?retryWrites=true&w=majority'; 
+const CONNECTION_URL = 'mongodb+srv://codewithallan:toshiro02@cluster0.b5v4tzx.mongodb.net/?retryWrites=true&w=majority'; 
    
 const PORT = process.env.PORT|| 5000;
 
