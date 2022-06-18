@@ -8,5 +8,6 @@ import coorposts from './coorPosts';
 import cosposts from './cosPosts'
 import authStudent from './authStudent'
 import cieposts from './ciePosts'
+import cafaposts from './cafaPosts'
 
-export const reducers = combineReducers({ posts, auth, authStudent, coeposts, citposts, coorposts, cosposts, cieposts });
+export const reducers = combineReducers({ posts, auth, authStudent, coeposts, citposts, coorposts, cosposts, cieposts, cafaposts });

@@ -59,6 +59,7 @@ const App = () => {
          <Route path='/coor'element={<Coor/>}/>
          <Route path="/coorposts/search" element={<Coor/>} />
          <Route path='/cafa' element={<Cafa/>}/>
+         <Route path='/cafaPosts/search' element={<Cafa/>}/>
          <Route path='/cla' element={<Cla/>}/>
          <Route path='/cos' element={<CosFinal/>} />
          <Route path='/cosposts/search' element={<CosFinal/>} />
