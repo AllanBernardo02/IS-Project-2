@@ -48,7 +48,7 @@ export const updateCiePost = (id, ciepost) => async (dispatch) => {
 export const countPost = (id) => async (dispatch) => {
 
     try {
-        const { data } = await api.countPost(id)
+        const { data } = await api.countPostCie(id)
 
         dispatch({type: COUNT, payload: data })
     } catch (error) {

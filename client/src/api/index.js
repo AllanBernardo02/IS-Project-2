@@ -74,7 +74,7 @@ export const updateCafaPost = (id, updateCafaPost) => API.patch(`/cafaposts/${id
 export const deleteCafaPost = (id) => API.delete(`/cafaposts/${id}`)
 // CLA CRUD
 export const fetchClaPosts = () => API.get('/claposts')
-export const fetchClaPostsBySearch = (searchClaQuery) => API.get(`/claposts/search?searchCafaQuery=${searchClaQuery.search || 'none'}`)
+export const fetchClaPostsBySearch = (searchClaQuery) => API.get(`/claposts/search?searchClaQuery=${searchClaQuery.search || 'none'}`)
 export const createClaPost = (newPost) => API.post('/claposts', newPost)
 export const countPostCla = (id) => API.patch(`/claposts/${id}/countPost`)
 export const updateClaPost = (id, updateClaPost) => API.patch(`/claposts/${id}`, updateClaPost)

@@ -21,9 +21,9 @@ export const getPostsBySearch = async (req, res) => {
     const { searchCafaQuery } = req.query
 
     try {
-        const fullnamecos = new RegExp(searchCafaQuery, 'i')
+        const fullnamecafa = new RegExp(searchCafaQuery, 'i')
 
-        const cafaposts = await CafaDatabase.find({$or: [{fullnamecos}]})
+        const cafaposts = await CafaDatabase.find({$or: [{fullnamecafa}]})
         res.json({data:cafaposts})
     } catch (error) {
         res.status(404).json({ message: error.message})
