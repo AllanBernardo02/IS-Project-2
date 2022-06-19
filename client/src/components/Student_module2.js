@@ -53,11 +53,11 @@ const back_cie = () => {
     history('/cie2')
 }
 const back_cafa = () =>{
-    history('/cafa')
+    history('/cafa2')
 }
 
 const back_cla = () =>{
-    history('/cla')
+    history('/cla2')
 }
 
 

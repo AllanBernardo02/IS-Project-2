@@ -16,6 +16,8 @@ import Cos2 from './components/Home2/Cos';
 import Coe2 from './components/Home2/Coe';
 import Cit2 from './components/Home2/Cit';
 import Cie2 from './components/Home2/Cie';
+import Cafa2 from './components/Home2/Cafa';
+import Cla2 from './components/Home2/Cla';
 
 import Auth from './components/Auth/Auth';
 import AuthStudent from './components/Auth/AuthStudent';
@@ -83,6 +85,12 @@ const App = () => {
 
          <Route path='/cie2' element={<Cie2/>} />
          <Route path='/cie2/search' element={<Cie2/>} />
+
+         <Route path='/cafa2' element={<Cafa2/>}/>
+         <Route path='/cafa2/search' element={<Cafa2/>}/>
+
+         <Route path='/cla2' element={<Cla2/>}/>
+         <Route path='/cla2/search' element={<Cla2/>}/>
 
         </Routes>
         

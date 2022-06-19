@@ -20,6 +20,16 @@ export const getPostsBySearch = (searchClaQuery) => async (dispatch) => {
     }
 }
 
+export const getPostsBySearch2 = (searchClaQuery) => async (dispatch) => {
+    try {
+        const { data:{ data } } = await api.fetchClaPostsBySearch2(searchClaQuery)
+
+        dispatch({ type: FETCH_BY_SEARCH, payload: data})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const createClaPost = (clapost) => async (dispatch) => {
     try {
         const { data } = await api.createClaPost(clapost)

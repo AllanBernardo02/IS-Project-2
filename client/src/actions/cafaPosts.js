@@ -26,6 +26,18 @@ export const getPostsBySearch = (searchCafaQuery) => async (dispatch) => {
     }
 }
 
+export const getPostsBySearch2 = (searchCafaQuery) => async (dispatch) => {
+    try {
+       
+        const { data: {data} } = await api.fetchCafaPostsBySearch2(searchCafaQuery)
+        dispatch({type: FETCH_BY_SEARCH, payload: data})
+
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const createCafaPost = (cafapost) => async (dispatch) => {
     try {
         
