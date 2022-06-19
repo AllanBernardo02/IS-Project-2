@@ -68,7 +68,7 @@ const back_cla = () =>{
       
         <div className="navbar">
             <div className='sm'>Student Module</div>
-            <div className='logo'>
+            {/**<div className='logo'>
                 <Avatar  alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
             </div>
             <div className='name'>
@@ -76,7 +76,7 @@ const back_cla = () =>{
             </div>
             <div className='ton'>
                 <Button variant="contained"  color="secondary" onClick={logout}>Logout</Button>
-            </div>
+    </div>**/}
          
         </div>
             <div className='bahay'>

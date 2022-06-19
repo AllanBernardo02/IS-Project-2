@@ -3,10 +3,13 @@ import { Link , useNavigate} from 'react-router-dom';
 import { PieChart, BarChart, AreaChart, ScatterChart } from 'react-chartkick'
 import 'chartkick/chart.js'
 import { useSelector, useDispatch } from 'react-redux';
+import {  Avatar} from '@material-ui/core';
 import Sana from './Sana';
 import Posts from './Posts/Posts';
 import Coechart from './Coechart';
 import Orgchart from './Orgchart';
+
+import * as actionType from '.././constants/actionTypes'
 
 import * as api from '../api/index'
 import './Dashboard.css'
@@ -25,11 +28,12 @@ const Dashboard = () => {
     // const coeposts = useSelector( (state) => state.coeposts)
     // const coeposts = useSelector( (state) => state.coeposts)
     const [localState, setLocalState] = useState({})
-    const user = JSON.parse(localStorage.getItem('profile'));
+    // const user = JSON.parse(localStorage.getItem('profile'));
     const [overallPosts, setOverallPosts] = useState([])
     const dispatch = useDispatch()
     const [currentId, setCurrentId] = useState(0)
     const history = useNavigate()
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
     useEffect(() => {
         if(!user) {
@@ -137,12 +141,32 @@ const Dashboard = () => {
         );
       }
 
+    const back = () => {
+        history('/student_module2')
+    }
+
+    const back1 = () => {
+        history('/coor')
+    }
+
+    const back2 = () => {
+        history('/posts')
+    }
+
+    const logout = () => {
+        dispatch({ type: actionType.LOGOUT });
+    
+        history('/');
+        setUser(null);
+      };
+
   return (
     <React.Fragment>
+    
     <div className='divide'>
         <div className='sidebar'>
        
-            <div className='name1'>      
+            <div className='name1'>  
                     <h1>Coordinator Dashboard</h1>
             </div>  
 
@@ -158,21 +182,28 @@ const Dashboard = () => {
 
                 
                     </div>*/}
+            <div className='module1'>
+                <Avatar  alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
+                <h2 className='name-u' variant="h6">{user?.result.name}</h2>
+            </div>
         
             <div className='module'>
-                <Link  component={Link} to="/student_module2">  
-                    <h2>Student Module</h2>
-                </Link>
+                <button onClick={back}>
+                    <h2 >Student Module</h2>
+                </button>
             </div>
             <div className='module'>
-                <Link  component={Link} to="/coor"> 
+                <button onClick={back1}>
                     <h2>Coordinator Module</h2>
-                </Link>
+                </button>
             </div>
             <div className='module'>
-                <Link  component={Link} to="/posts">  
+                <button onClick={back2}>
                     <h2>Organisation Module</h2>
-                </Link>
+                </button>
+            </div>
+            <div className='module'>
+                <button variant="contained"  color="secondary" onClick={logout}>Logout</button>
             </div>
 
            
@@ -201,12 +232,12 @@ const Dashboard = () => {
         <div className='chart'>
             <PieChart data={[["Number of Organization", localState.postsCount],["Number of Coordinator", localState.coorCount],["Number of Students in COS", localState.cosCount], ["Number of Students in COE", localState.coeCount], 
             ["Number of Students in CIT", localState.citCount], ["Number of Students in CIE", localState.cieCount],
-            ["Number of Students in CLA", 23], ["Number of Students in CAFA", 18]]} />
+            ["Number of Students in CLA", localState.claCount], ["Number of Students in CAFA", localState.cafaCount]]} />
         </div>
         <div className='chart'>
-            <BarChart data={[["Number of Students in COS", posts.length], ["Number of Students in COE", coeposts.length], 
-                ["Number of Students in CIT", 13], ["Number of Students in CIE", 8],
-                ["Number of Students in CLA", 23], ["Number of Students in CAFA", 18]]} /> 
+            <BarChart data={[["Number of Students in COS", localState.cosCount], ["Number of Students in COE", localState.coeCount], 
+                ["Number of Students in CIT", localState.citCount], ["Number of Students in CIE", localState.cieCount],
+                ["Number of Students in CLA", localState.claCount], ["Number of Students in CAFA", localState.cafaCount], ["Number of Coordinator", localState.coorCount], ["Number of Organization", localState.postsCount]]} /> 
         </div>
         <AreaChart data={{"COS": localState.cosCount, "COE": localState.coeCount, "CIT": localState.citCount}} />
         <ScatterChart data={[[174.0, 80.0], [176.5, 82.3]]} xtitle="Size" ytitle="Population" />

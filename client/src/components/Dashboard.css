@@ -22,6 +22,15 @@
     margin: 30px 0 0 20px;
 }
 
+.module1{
+    margin: 30px 0 0 20px;
+    display: flex;
+}
+
+.name-u{
+    margin: 5px;
+}
+
 .div1{
     display: grid;
     grid-template-columns: 1fr 1fr;
