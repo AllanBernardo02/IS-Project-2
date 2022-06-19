@@ -34,6 +34,7 @@ export const signUpStudent = (formDataStudent) => API.post('/student/signupStude
 //COE CRUD
 export const fetchCoePosts = () => API.get('/coeposts')
 export const fetchCoePostsBySearch = (searchCoeQuery) => API.get(`/coeposts/search?searchCoeQuery=${searchCoeQuery.search || 'none'}`)
+export const fetchCoePostsBySearch2 = (searchCoeQuery) => API.get(`/coe2/search?searchCoeQuery=${searchCoeQuery.search || 'none'}`)
 export const createCoePost = (newPost) => API.post('/coeposts', newPost)
 export const countPost = (id) => API.patch(`/coeposts/${id}/countPost`)
 export const updateCoePost = (id, updateCoePost) => API.patch(`/coeposts/${id}`, updateCoePost)
@@ -54,6 +55,7 @@ export const deleteCoorPost = (id) => API.delete(`/coorposts/${id}`)
 //COS CRUD
 export const fetchCosPosts = () => API.get('/cosposts') 
 export const fetchCosPostsBySearch = (searchCosQuery) => API.get(`/cosposts/search?searchCosQuery=${searchCosQuery.search || 'none'}`)
+export const fetchCosPostsBySearch2 = (searchCosQuery) => API.get(`/cos2/search?searchCosQuery=${searchCosQuery.search || 'none'}`)
 export const createCosPost = (newPost) => API.post('/cosposts', newPost)
 export const countPostCos = (id) => API.patch(`/cosposts/${id}/countPost`)
 export const updateCosPost = (id, updateCosPost) => API.patch(`/cosposts/${id}`, updateCosPost)

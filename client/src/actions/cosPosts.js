@@ -26,6 +26,18 @@ export const getPostsBySearch = (searchCosQuery) => async (dispatch) => {
     }
 }
 
+export const getPostsBySearch2 = (searchCosQuery) => async (dispatch) => {
+    try {
+       
+        const { data: {data} } = await api.fetchCosPostsBySearch2(searchCosQuery)
+        dispatch({type: FETCH_BY_SEARCH, payload: data})
+
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const createCosPost = (cospost) => async (dispatch) => {
     try {
         

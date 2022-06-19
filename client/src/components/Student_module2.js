@@ -38,11 +38,11 @@ const Student_module2 = () => {
       }
 
 const back_cos = () => {
-    history('/cos')
+    history('/cos2')
 }
 
 const back_coe = () => {
-    history('/coe')
+    history('/coe2')
 }
 
 const back_cit = () => {

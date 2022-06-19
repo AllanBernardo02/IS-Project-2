@@ -25,6 +25,16 @@ export const getPostsBySearch = (searchCoeQuery) => async (dispatch) => {
     }
 }
 
+export const getPostsBySearch2 = (searchCoeQuery) => async (dispatch) => {
+    try {
+        const { data:{ data } } = await api.fetchCoePostsBySearch2(searchCoeQuery)
+
+        dispatch({ type: FETCH_BY_SEARCH, payload: data})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const createCoePost = (coepost) => async (dispatch) => {
     try {
         const { data } = await api.createCoePost(coepost)

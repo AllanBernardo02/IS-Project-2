@@ -12,6 +12,9 @@ import Cafa from './components/Home/Cafa';
 import Cla from './components/Home/Cla';
 import CosFinal from './components/Home/CosFinal';
 
+import Cos2 from './components/Home2/Cos';
+import Coe2 from './components/Home2/Coe';
+
 import Auth from './components/Auth/Auth';
 import AuthStudent from './components/Auth/AuthStudent';
 import Sana from './components/Sana'
@@ -64,6 +67,14 @@ const App = () => {
          <Route path='/claposts/search' element={<Cla/>}/>
          <Route path='/cos' element={<CosFinal/>} />
          <Route path='/cosposts/search' element={<CosFinal/>} />
+
+
+
+         <Route path='/cos2' element={<Cos2/>} />
+         <Route path='/cos2/search' element={<Cos2/>} />
+         <Route path='/coe2' element={<Coe2/>} />
+         <Route path='/coe2/search' element={<Coe2/>} />
+
         </Routes>
         
       
