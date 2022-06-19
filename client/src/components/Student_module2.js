@@ -46,11 +46,11 @@ const back_coe = () => {
 }
 
 const back_cit = () => {
-    history('/cit')
+    history('/cit2')
 }
 
 const back_cie = () => {
-    history('/cie')
+    history('/cie2')
 }
 const back_cafa = () =>{
     history('/cafa')

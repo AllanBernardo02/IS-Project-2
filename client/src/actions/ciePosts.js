@@ -25,6 +25,16 @@ export const getPostsBySearch = (searchCieQuery) => async (dispatch) => {
     }
 }
 
+export const getPostsBySearch2 = (searchCieQuery) => async (dispatch) => {
+    try {
+        const { data:{ data } } = await api.fetchCiePostsBySearch2(searchCieQuery)
+
+        dispatch({ type: FETCH_BY_SEARCH, payload: data})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const createCiePost = (ciepost) => async (dispatch) => {
     try {
         const { data } = await api.createCiePost(ciepost)

@@ -20,6 +20,16 @@ export const getPostsBySearch = (searchCitQuery) => async (dispatch) => {
     }
 }
 
+export const getPostsBySearch2 = (searchCitQuery) => async (dispatch) => {
+    try {
+        const { data:{ data } } = await api.fetchCitPostsBySearch2(searchCitQuery)
+
+        dispatch({ type: FETCH_BY_SEARCH, payload: data})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const createCitPost = (citpost) => async (dispatch) => {
     try {
         const { data } = await api.createCitPost(citpost)

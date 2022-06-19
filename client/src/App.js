@@ -14,6 +14,8 @@ import CosFinal from './components/Home/CosFinal';
 
 import Cos2 from './components/Home2/Cos';
 import Coe2 from './components/Home2/Coe';
+import Cit2 from './components/Home2/Cit';
+import Cie2 from './components/Home2/Cie';
 
 import Auth from './components/Auth/Auth';
 import AuthStudent from './components/Auth/AuthStudent';
@@ -72,8 +74,15 @@ const App = () => {
 
          <Route path='/cos2' element={<Cos2/>} />
          <Route path='/cos2/search' element={<Cos2/>} />
+
          <Route path='/coe2' element={<Coe2/>} />
          <Route path='/coe2/search' element={<Coe2/>} />
+
+         <Route path='/cit2' element={<Cit2/>} />
+         <Route path='/cit2/search' element={<Cit2/>} />
+
+         <Route path='/cie2' element={<Cie2/>} />
+         <Route path='/cie2/search' element={<Cie2/>} />
 
         </Routes>
         
